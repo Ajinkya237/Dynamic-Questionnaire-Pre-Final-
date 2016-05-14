@@ -1,0 +1,12 @@
+{% if all_questions %}
+
+<h1>Good to go!</h1>
+
+<ul>
+	{% for result in choice.result_set.all %}
+		<li><a href="/DynamicQ/{{question.id}}/{{choice.id}}/{{result.id}}">{{ result.result_text }}</li>
+	{% endfor %}
+</ul>
+{% else %}
+	<h3>You don't have any choices</h3>
+{% endif %}	

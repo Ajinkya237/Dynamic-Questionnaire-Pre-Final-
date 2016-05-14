@@ -1,0 +1,13 @@
+<h3>So, where would you like to go?</h3>
+
+<ul>
+	{% for choice in question.choice_set.all %}
+		<li><a href="/DynamicQ/{{question.id}}/{{choice.id}}">{{ choice.choice_text }}</li>
+	{% endfor %}
+</ul>
+
+{% if error_message %}
+	<p><strong>{{error_message}}</strong></p>
+{% endif %}
+
+<form action="{%url ''}">

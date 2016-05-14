@@ -1,0 +1,10 @@
+{% if all_questions %}
+	<h3>What would you like to eat?</h3>
+	<ul>
+		{% for question in all_questions %}
+		<li><a href="/DynamicQ/{{question.id}}"> {{question.question_text}}</a></li>
+		{% endfor %}
+	 </ul>
+{% else %}
+	<h3>You don't have any questions</h3>
+{% endif %}	
